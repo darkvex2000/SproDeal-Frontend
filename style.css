@@ -106,6 +106,7 @@ section {
 
     form {
         padding: 20px;
+        box-shadow: none;
     }
 
     form h1 {

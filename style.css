@@ -27,7 +27,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    display: none;
 }
 
 #detailsForm {
@@ -40,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    
+    display: none;
 }
 
 /* Hide Details Form */
@@ -55,6 +54,7 @@ form h1 {
     text-align: center;
     font-size: 30px;
 }
+
 form img,
 form h2,
 form h3,

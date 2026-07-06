@@ -74,3 +74,30 @@ document.getElementById("detailsForm").addEventListener("submit", async function
     alert(data.message);
 
 });
+
+
+function showPopup() {
+
+    document.getElementById("overlay").style.display = "flex";
+
+    let time = 2;
+    document.getElementById("count").innerText = time;
+
+    let interval = setInterval(() => {
+
+        time--;
+        document.getElementById("count").innerText = time;
+
+        if (time <= 0) {
+            clearInterval(interval);
+
+            // Redirect page
+            window.location.href = "index.html";
+        }
+
+    }, 1000);
+}
+
+function closePopup() {
+    document.getElementById("overlay").style.display = "none";
+}

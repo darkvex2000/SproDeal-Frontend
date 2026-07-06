@@ -23,7 +23,7 @@
 
         <input type="tel" id="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required>
 
-        <input type="password" id="password"  placeholder="Enter Password" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
 
         <input type="submit" value="Log In">
 
@@ -110,9 +110,30 @@
 
         </select>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="showPopup()">
 
     </form>
+
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <div class="icon">✓</div>
+
+            <h2>Submission Successful!</h2>
+
+            <p>
+                Your details have been submitted.
+                We will review your issue shortly.
+            </p>
+
+            <button onclick="closePopup()">OK</button>
+
+            <div class="timer">
+                Redirecting in <span id="count">2</span>s...
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="script.js"></script>
 

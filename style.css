@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    scrollbar-width: none;
 }
 
 body {
@@ -26,19 +27,20 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    display: none;
 }
 
 #detailsForm {
     background: #fff;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
     padding: 22px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    display: none;
+
 }
 
 /* Hide Details Form */
@@ -58,6 +60,12 @@ form h2,
 form h3,
 form p {
     text-align: center;
+}
+
+form p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 label {
@@ -88,6 +96,10 @@ input[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: .3s;
+}
+
+#detailsForm input[type="submit"] {
+   margin-top: 10px;
 }
 
 input[type="submit"]:hover {

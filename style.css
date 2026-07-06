@@ -20,7 +20,7 @@ body {
 #loginForm {
     background: #fff;
     width: 100%;
-    max-width: 450px;
+    min-width: 450px;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
@@ -33,7 +33,7 @@ body {
     background: #fff;
     width: 100%;
     max-width: 500px;
-    height: auto;
+    max-height: 800px;
     padding: 22px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
@@ -47,7 +47,7 @@ body {
 
 form img {
     width: 150px;
-    margin: auto;
+    margin: 0 auto;
     border-radius: 12px;
 }
 

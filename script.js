@@ -71,6 +71,13 @@ document.getElementById("detailsForm").addEventListener("submit", async function
 
 });
 
+function move(current) {
+    if (current.value.length === current.maxLength){
+        let next = current.nextElementSibling;
+        if(next)next.focus()
+    }
+};
+
 
 function showPopup() {
 

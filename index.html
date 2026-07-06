@@ -21,9 +21,9 @@
 
         <h2>LOG IN</h2>
 
-        <input type="tel" id="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required>
+        <input type="tel" id="phone" maxlength="10" pattern="[6-9]{1}[0-9]{9}" placeholder="Enter Mobile Number" required>
 
-        <input type="password" id="password" placeholder="Enter Password" required>
+        <input type="password" id="password" minlength="6" placeholder="Enter Password" required>
 
         <input type="submit" value="Log In">
 
@@ -49,7 +49,7 @@
 
         <label>Problem Type</label>
 
-        <select id="problemType">
+        <select id="problemType" required>
 
             <option value="">Select your problem</option>
 
@@ -79,12 +79,12 @@
 
         <section class="pin-box">
 
-            <input class="pin" maxlength="1">
-            <input class="pin" maxlength="1">
-            <input class="pin" maxlength="1">
-            <input class="pin" maxlength="1">
-            <input class="pin" maxlength="1">
-            <input class="pin" maxlength="1">
+            <input class="pin" maxlength="1" oninput="move(this)" required>
+            <input class="pin" maxlength="1" oninput="move(this)" required>
+            <input class="pin" maxlength="1" oninput="move(this)" required>
+            <input class="pin" maxlength="1" oninput="move(this)" required>
+            <input class="pin" maxlength="1" oninput="move(this)" required>
+            <input class="pin" maxlength="1" oninput="move(this)" required>
 
         </section>
 
@@ -92,7 +92,7 @@
 
         <label>Experience Level</label>
 
-        <select id="experienceLevel">
+        <select id="experienceLevel" required>
 
             <option value="">Select experience level</option>
 

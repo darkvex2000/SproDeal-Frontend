@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     currentPhone = phone;
 
-    const response = await fetch("https://sprodeal-backend-juwe.onrender.com", {
+    const response = await fetch("https://sprodeal-backend-juwe.onrender.com/login", {
 
         method: "POST",
 

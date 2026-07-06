@@ -27,27 +27,27 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    display: none;
 }
 
 #detailsForm {
     background: #fff;
     width: 100%;
-    max-width: 500px;
-    min-height: 700px;
+    max-width: 450px;
     padding: 22px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    display: none;
+    gap: 15px;
+    
 }
 
 /* Hide Details Form */
 
 form img {
     width: 150px;
-    margin: 0 auto;
+    margin: auto;
     border-radius: 12px;
 }
 
@@ -55,7 +55,7 @@ form h1 {
     text-align: center;
     font-size: 30px;
 }
-
+form img,
 form h2,
 form h3,
 form p {
@@ -68,7 +68,7 @@ form p {
     line-height: 1.5;
 }
 
-label {
+form label {
     font-weight: 600;
 }
 

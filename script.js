@@ -26,8 +26,6 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     const data = await response.json();
 
-    alert(data.message);
-
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("detailsForm").style.display = "block";
 
@@ -70,8 +68,6 @@ document.getElementById("detailsForm").addEventListener("submit", async function
     });
 
     const data = await response.json();
-
-    alert(data.message);
 
 });
 
